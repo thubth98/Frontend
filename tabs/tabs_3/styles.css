@@ -30,7 +30,9 @@ ul li {
     overflow: hidden;
     background-color: #d8ebe4;
 }
-
+.bg--none {
+    background-color: #d8ebe4 !important;
+}
 .tabs-header__link {
     display: inline-block;
     padding: 15px;
@@ -43,8 +45,7 @@ ul li {
     font-weight: bold;
 }
 
-.tabs-header__link:hover,
-.tabs-active {
+.tabs-header__link:hover {
     background-color: #fed049;
     color: #ffffff;
 }
@@ -101,7 +102,9 @@ ul li {
 .tabs-show-content {
     display: block;
 }
-
+.tabs-active a {
+    color: #ffffff;
+}
 /*color background*/
 .bg--blue {
     background-color: blue;

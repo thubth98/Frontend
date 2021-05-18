@@ -37,13 +37,13 @@
     </div>
     </div>
     <ul class="tabs-header">
-        <li class="tabs-header__link tabs-active">
+        <li id="defaultOpen" class="tabs-header__link tabs-active" onclick="openCity(this,'blue')">
             <a href="#">Tokio</a>
         </li>
-        <li class="tabs-header__link">
+        <li class="tabs-header__link" onclick="openCity(this,'red')">
             <a href="#">London</a>
         </li>
-        <li class="tabs-header__link">
+        <li class="tabs-header__link" onclick="openCity(this,'green')">
             <a href="#">Paris</a>
         </li>
     </ul>
@@ -54,16 +54,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.tabs-header__link').click(function () {
-                $(this).addClass('tabs-active');
-                $(this).siblings().removeClass('tabs-active');
-                let index = $(this).index();
-                console.log(index);
-                $('.tabs-content__item').eq(index).addClass("tabs-show-content");
-                $('.tabs-content__item').eq(index).siblings().removeClass("tabs-show-content");
-            })
-        })
+        $('#defaultOpen').click();
+        function openCity(elemnt, color) {
+            $(elemnt).addClass('tabs-active');
+            $(elemnt).removeClass('bg--none');
+            $(elemnt).siblings().removeClass('tabs-active');
+            $(elemnt).siblings().addClass('bg--none'); let index = $(elemnt).index();
+            $('.tabs-content__item').eq(index).addClass("tabs-show-content");
+            $('.tabs-content__item').eq(index).siblings().removeClass("tabs-show-content");
+            elemnt.style.backgroundColor = color;
+        }
     </script>
 
 </body>
