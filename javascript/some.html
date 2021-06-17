@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Học lập trình miễn phí tại freetuts.net</h1>
+        <p>Click vào button kiểm tra học sinh có đủ điểm đỗ không.</p>
+ 
+        <button onclick="myFunction()">Kiểm tra</button>
+ 
+        <p id="demo"></p>
+ 
+        <script>
+            var score = [7, 8, 9, 10,3];
+ 
+            function checkPass(score) {
+                return score < 5;
+            }
+ 
+            function myFunction() {
+                if (score.some(checkPass) == true) {
+                    document.getElementById("demo").innerHTML = 'không đủ điểm đỗ!';
+                }else{
+                    document.getElementById("demo").innerHTML = 'Đủ điểm đỗ!';
+                }
+            }
+        </script>
+    </body>
+</html>
